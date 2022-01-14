@@ -1,0 +1,152 @@
+<!-- Anil Pujara anipujar@uat.edu -->
+<!-- Assignment Week 2, #2-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Headers Tag Start -->
+<head>
+
+    <!-- Title Tag -->
+    <title>Blastoff! - Assignment #2 by Anil Pujara</title>
+
+    <script>
+        function Countdown() {
+
+            // Variable Declarations for Timer & Countdown 
+            // 10 + 1 to Start from 10 & End at 0 then Blastoff
+            var countdowntimer = 11;
+            var timeout = 11000;
+            
+            // Library Function setTimeout after a variable number of seconds (timeout) 
+            setTimeout(() => { 
+                // Edit innerHTML for CountdownDisplay <p> to Blastoff!
+                document.getElementById("CountdownDisplay").innerHTML = "Blastoff!";
+                }, timeout)
+            // Reduce timeout variable by 1 second (1000ms)
+            timeout=timeout-1000;
+
+            // 0 - Library Function setTimeout 
+            setTimeout(() => { 
+                // Edit innerHTML for CountdownDisplay <p> to current countdown timer
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                // Reduce countdown timer by 1
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            // Reduce Timer by 1 Second (1000ms)
+            timeout=timeout-1000;
+
+            // 0 - Library Function setTimeout 
+            setTimeout(() => { 
+                // Edit innerHTML for CountdownDisplay <p> to current countdown timer
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                // Reduce countdown timer by 1
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            // Reduce Timer by 1 Second (1000ms)
+            timeout=timeout-1000;
+
+            // 1 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 2 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 3 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 4 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 5 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 6 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 7 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 8 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 9 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+
+            // 10 - Library Function setTimeout
+            setTimeout(() => { 
+                document.getElementById("CountdownDisplay").innerHTML = countdowntimer;
+                countdowntimer=countdowntimer-1;
+                }, timeout)
+            timeout=timeout-1000;
+        }
+    </script>
+    <!-- Begin Styling for Page -->
+    <style>
+        /* Body Styling for Font Family */
+        body { 
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        /* CountdownDisplay to show large font and red color */
+        .countdown { 
+            font-size: 60px;
+            color:red;
+        }
+
+        /* Countdown Button formatting to change colors & look for user */
+        .countdownbutton {
+            font-size: 30px;
+            background-color: rgb(83, 83, 83);
+            color: rgb(255, 255, 255);
+            padding: 10px;
+        }
+    </style>
+    <!-- End Styling for Page -->
+</head>
+<!-- Header Tags End -->
+<!-- Body Start -->
+<body>
+    <!-- Display Logo Centered and Linked for Reload -->
+    <center><a href="https://anilpujara.com/uat/csc102/blastoff.html"><img src="UATspaceLogo-2.jpg" alt="UAT Space Logo"></a></center>
+    <!-- Countdown Button with Styling Class 'countdownbutton' -->
+    <p align="center"><button onClick="Countdown()" class="countdownbutton">Start the Countdown</button></p>
+    <!-- Countdown Display Element for JS update via Button Click -->
+    <p align="center" id="CountdownDisplay" class="countdown">#</p>
+</body>
+<!-- Body End -->
+</html>

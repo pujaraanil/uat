@@ -1,0 +1,26 @@
+/* Body Styling for Font Family */
+body { 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* CountdownDisplay to show large font and red color */
+.countdown { 
+    font-size: 60px;
+    color:red;
+}
+
+/* CountdownWarning used in v3 Assignment 5 */
+.countdown-warning { 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color:red;
+}
+
+/* Countdown Button formatting to change colors & look for user */
+.countdownbutton {
+    font-size: 30px;
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
