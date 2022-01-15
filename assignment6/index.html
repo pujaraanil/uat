@@ -1,0 +1,128 @@
+<!-- Anil Pujara anipujar@uat.edu -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mission Control Operator Login - Assignment #6 by Anil Pujara</title>
+    <script>
+        function formValidation() {
+            // Retrieve all form inputs and assign to variables
+            var firstname = document.forms["nameinput"]["firstname"];
+            var lastname = document.forms["nameinput"]["lastname"];
+
+            // Concatenate First Name and Last Name with a space between
+            var fullname = firstname.value + " " + lastname.value;     
+
+            // Full Name Validation Loop: If Length of combined is >20 or Name inputs are blank
+            while(fullname.length>20 || firstname.value=="" || lastname.value=="") {
+                if(fullname.length>20) {
+                    // Alert if Combined Name is Greater and Focus on First Name
+                    alert("Your name is too long. Please shorten to 20 characters or less combined");
+                    firstname.focus();
+                    return false; // Error so do not continue program
+                }
+                if(firstname.value=="") {
+                    // Alert if First Name is blank and Focus on First Name
+                    alert("First Name cannot be blank. Please enter your first name");
+                    firstname.focus();
+                    return false; // Error so do not continue program
+                }
+                if(lastname.value=="") {
+                    // Alert if Last Name is blank and Focus on Last Name
+                    alert("Last Name cannot be blank. Please enter your first name");
+                    lastname.focus();
+                    return false; // Error so do not continue program
+                }
+            }
+
+            if(fullname.length<=20 && firstname.value!="" && lastname.value!="") {
+
+                // Name validation completed, so assign Badge Number to Variable for validation
+                var badge = document.forms["nameinput"]["badge"];
+                var badgenumber = Number(badge.value); // Assign value to badgenumber variable and convert to Number
+
+                // Badge Number Validation Loop: If Length is not 3 or user input is not a number
+                while(badgenumber.toString().length!==3 || isNaN(badgenumber)) {
+                        if(badgenumber.toString().length!==3) {
+                            alert("Badge Number must be 3 digits");
+                        }
+                        if(isNaN(badgenumber)) {
+                            alert("Badge Number cannot contain characters, must be a 3 digit number");
+                        }
+                    badge.focus();
+                    return false;
+                }
+                
+                if(badgenumber<1000 && badgenumber.toString().length==3) {
+                    // Final Validation Completed (Badge) so Display All Results
+                    document.getElementById("displayName").innerHTML = fullname;
+                    document.getElementById("displayBadge").innerHTML = badgenumber;
+                }
+            }   
+            // So form doesn't actually submit
+            return false;
+        }
+    </script>
+    <style>
+
+        body { 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .formtable {
+            padding: 5%;
+            border-color: red;
+            border-style: dotted;
+            background-color: rgb(44, 44, 44);
+            color: white;
+
+        }
+
+        input {
+            font-size: 14pt;
+        }
+
+        .display {
+            font-size: 18pt;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <a href="https://anilpujara.com/uat/csc102/assignment6"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg" alt="UAT Space Logo"></a><br>
+    <form id="nameinput" onSubmit="return formValidation()">
+        <table class="formtable" cellpadding="10">
+            <tr>
+                <td colspan="2"><center><strong>MISSION CONTROL OPERATOR LOGIN</strong></center><br></td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="firstname"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lastname"></td>
+            </tr>
+            <tr>
+                <td>Badge #:</td>
+                <td><input type="text" size="5" name="badge"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="Next" value="Validate & Sign In"></td>
+            </tr>
+            <tr>
+                <td colspan="2" height="10"></td>
+            </tr>            
+            <tr>
+                <td>Full Name:</td>
+                <td><p id="displayName" align="center" class="display"></p></td>
+            </tr>
+            <tr>
+                <td>Badge #:</td>
+                <td><p id="displayBadge" align="center" class="display"></p></td>
+            </tr>
+        </table>
+    </form>
+    </center>
+</body>
+</html>
