@@ -2,20 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Title Tag Assignment Name & Number -->
     <title>Mission Control Operator Login - Assignment #6 by Anil Pujara</title>
     <script>
+        // Function to Validate Form before Submitting
+        // Ultimately even if form validated, results will be displayed but return false so form doesn't actually submit
         function formValidation() {
-            // Retrieve all form inputs and assign to variables
+
+            // Retrieve first and last name inputs and assign to variables
             var firstname = document.forms["nameinput"]["firstname"];
             var lastname = document.forms["nameinput"]["lastname"];
-
             // Concatenate First Name and Last Name with a space between
             var fullname = firstname.value + " " + lastname.value;     
 
-            // Full Name Validation Loop: If Length of combined is >20 or Name inputs are blank
+            /* Full Name Validation Loop: While Length of combined is >20 or either name inputs are blank
+            If full name is validated, nested if and while loops for badge number validation
+            Nested so if fully validated, results will be displayed together.
+            */ 
+
             while(fullname.length>20 || firstname.value=="" || lastname.value=="") {
+                
+                // If statements for specific alerts based on validation error
                 if(fullname.length>20) {
-                    // Alert if Combined Name is Greater and Focus on First Name
+                    // Alert if Combined Name is Greater than 20 and Focus on First Name
                     alert("Your name is too long. Please shorten to 20 characters or less combined");
                     firstname.focus();
                     return false; // Error so do not continue program
@@ -33,96 +42,119 @@
                     return false; // Error so do not continue program
                 }
             }
+            // End While Loop for Name Validation
 
+            // If successfull name validation, move on to badge number validation
             if(fullname.length<=20 && firstname.value!="" && lastname.value!="") {
-
-                // Name validation completed, so assign Badge Number to Variable for validation
+                
+                // Assign Badge Number to Variable for validation
                 var badge = document.forms["nameinput"]["badge"];
-                var badgenumber = Number(badge.value); // Assign value to badgenumber variable and convert to Number
+                var badgenumber = Number(badge.value); 
+                // ^ Assign value to badgenumber variable and convert to Number
 
-                // Badge Number Validation Loop: If Length is not 3 or user input is not a number
+                // Begin Badge Number Validation Loop: While Length is not 3 or user input is not a number
                 while(badgenumber.toString().length!==3 || isNaN(badgenumber)) {
-                        if(badgenumber.toString().length!==3) {
+
+                    // Specific alerts for validation errors, length not 3 digits
+                    if(badgenumber.toString().length!==3) {
                             alert("Badge Number must be 3 digits");
+                            badge.focus(); // Focus to badge input field
+                            return false; // Error so do not continue program
                         }
-                        if(isNaN(badgenumber)) {
+                    // Specific alert for validation error, badge number
+                    if(isNaN(badgenumber)) {
                             alert("Badge Number cannot contain characters, must be a 3 digit number");
+                            badge.focus(); // Focus to badge input field
+                            return false; // Error so do not continue program
                         }
-                    badge.focus();
-                    return false;
                 }
+                // End While Loop 
                 
                 if(badgenumber<1000 && badgenumber.toString().length==3) {
-                    // Final Validation Completed (Badge) so Display All Results
+                    // Final Validation Completed (Badge) so Display Results; Full Name & Badge Number
                     document.getElementById("displayName").innerHTML = fullname;
                     document.getElementById("displayBadge").innerHTML = badgenumber;
                 }
-            }   
+            }
             // So form doesn't actually submit
             return false;
-        }
+        } // End Function
     </script>
     <style>
+        /* Styling for Body, Form Table, Input Values, and Results Display */
 
         body { 
             font-family: Arial, Helvetica, sans-serif;
         }
         .formtable {
-            padding: 5%;
-            border-color: red;
-            border-style: dotted;
-            background-color: rgb(44, 44, 44);
-            color: white;
+            padding: 5%; /* Add Padding to Table for UX Friendly Spacing */
+            border-color: red; /* Add Red Border */
+            border-style: dotted; /* Dotted Border */
+            background-color: rgb(44, 44, 44); /* Grey Background */
+            color: white; /* White font color */
 
         }
 
         input {
-            font-size: 14pt;
+            font-size: 14pt; /* Increase Size of Input Field Font to 14pt */
         }
 
         .display {
-            font-size: 18pt;
-            color: red;
+            font-size: 18pt; /* Increase size of Results display to 18pt */
+            color: red; /* Change color of results to Red */
         }
+        /* End Styling */
     </style>
 </head>
 <body>
+    <!-- Center all Content -->
     <center>
-    <a href="https://anilpujara.com/uat/csc102/assignment6"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg" alt="UAT Space Logo"></a><br>
+    <!-- Logo Img and an Absolute Link to Refresh Page as needed -->
+    <a href="https://anilpujara.com/uat/csc102/"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg" alt="UAT Space Logo"></a><br>
+    <!-- Beginning of Form named nameinput and onSubmit invoke formValidation function -->
     <form id="nameinput" onSubmit="return formValidation()">
         <table class="formtable" cellpadding="10">
             <tr>
+                <!-- Title of Form Bolded and Centered -->
                 <td colspan="2"><center><strong>MISSION CONTROL OPERATOR LOGIN</strong></center><br></td>
             </tr>
             <tr>
+                <!-- First Name Label & Text Field -->
                 <td>First Name:</td>
                 <td><input type="text" name="firstname"></td>
             </tr>
             <tr>
+                <!-- Last Name Label & Text Field -->
                 <td>Last Name:</td>
                 <td><input type="text" name="lastname"></td>
             </tr>
             <tr>
+                <!-- Badge Number Label & Text Field resized to be smaller -->
                 <td>Badge #:</td>
                 <td><input type="text" size="5" name="badge"></td>
             </tr>
             <tr>
+                <!-- Empty first column and Submit Button for UX friendly alignment -->
                 <td></td>
                 <td><input type="submit" name="Next" value="Validate & Sign In"></td>
             </tr>
             <tr>
+                <!-- Empty table data with a height of 10 for UX friendly spacing between form fields and results -->
                 <td colspan="2" height="10"></td>
             </tr>            
             <tr>
+                <!-- Placeholder for Results of Fullname if validated -->
                 <td>Full Name:</td>
                 <td><p id="displayName" align="center" class="display"></p></td>
             </tr>
             <tr>
+                <!-- Placeholder for Results of Badge Number if validated -->
                 <td>Badge #:</td>
                 <td><p id="displayBadge" align="center" class="display"></p></td>
             </tr>
         </table>
     </form>
+    <!-- End Table & Form -->
     </center>
 </body>
 </html>

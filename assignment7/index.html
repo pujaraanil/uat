@@ -1,0 +1,167 @@
+<!-- Anil Pujara anipujar@uat.edu -->
+<!-- Assignement Week 4, #7-->
+<!DOCTYPE html>
+<!-- ^ Declaration of Document Type -->
+<html lang="en">
+<head>
+    <!-- Title Tag of Page -->
+    <title>UAT Space Program - Assignment #7 by Anil Pujara</title>
+    <style>
+        .tabledata {
+            background-color:grey;
+        }
+        .datatype_col {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 12pt;
+            background-color: rgb(211, 211, 211);
+        }
+
+        .reading_col {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 12pt;
+            background-color: rgb(221, 180, 180);
+            font-weight: bolder;
+        }
+        
+        .header_rows {
+            background-color:black;
+            color:white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 14pt;
+        }
+
+        .title_row {
+            background-color:white;
+            color:red;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 18pt;
+            font-weight: bolder;
+            padding-top: 10px; padding-bottom: 10px;
+        }
+
+        .buttonstyle {
+            font-size: 18pt;
+        }
+    </style>
+    <script>
+        function startButton() {
+            document.getElementById("startbutton").disabled = true;
+            document.getElementById("stopbutton").disabled = false;
+        }
+
+        function stopButton() {
+            document.getElementById("stopbutton").disabled = true;
+            document.getElementById("startbutton").disabled = false;
+        }
+    </script>
+</head>
+<body>
+    <!-- Display Logo Centered and Linked for Reload -->
+<center>
+    <a href="https://anilpujara.com/uat/csc102/"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg" alt="UAT Space Logo"></a><br>
+    <table width="80%" class="tabledata" name="datatable" border="1" cellpadding="5">
+        <tr>
+            <td colspan="2" class="title_row">
+            <center><span style="font-size:20pt;">UAT SPACE PROGRAM</span></center>
+            </td> 
+        </tr>
+        <tr>
+            <td width="50%" class="header_rows">
+                <strong>Data Type</strong>
+            </td>
+            <td width="50%"  class="header_rows">
+                <strong>Reading</strong>
+            </td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Time elapsed:</td>
+            <td class="reading_col">15 seconds</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Latitude</td>
+            <td class="reading_col">0</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Longitutde:</td>
+            <td class="reading_col">0</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">GPS Altitude:</td>
+            <td class="reading_col">0</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">BMP Sensor Altitude:</td>
+            <td class="reading_col">30383.04</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">BMP Sensor Pressure:</td>
+            <td class="reading_col">2.34</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">BMP Sensor Temperature:</td>
+            <td class="reading_col">0</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Digital Sensor Temperature:</td>
+            <td class="reading_col">24.12</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">CSS Sensor Temperature:</td>
+            <td class="reading_col">25</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">CSS Sensor eC02:</td>
+            <td class="reading_col">400</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">CSS Sensor TVOC:</td>
+            <td class="reading_col">0</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">UV:</td>
+            <td class="reading_col">0</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Accel X:</td>
+            <td class="reading_col">-0.87</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Accel Y:</td>
+            <td class="reading_col">-0.02</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Accel Z:</td>
+            <td class="reading_col">9.61</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Magnetic X:</td>
+            <td class="reading_col">0.13</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Magentic Y:</td>
+            <td class="reading_col">0.57</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Magnetic Z:</td>
+            <td class="reading_col">-0.24</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Gyro X:</td>
+            <td class="reading_col">4.66</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Gyro Y:</td>
+            <td class="reading_col">0.01</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Gyro Z:</td>
+            <td class="reading_col">-0.4</td>
+        </tr>
+    </table>
+    <br>
+    <input type="button" class="buttonstyle" name="startbutton" id="startbutton" value="Start" onClick="startButton();"> 
+    <input type="button" class="buttonstyle" name="stopbutton"  id="stopbutton" value="Stop" onClick="stopButton();" disabled>
+    <br><br>
+</center>
+</body>
+</html>

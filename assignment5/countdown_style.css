@@ -5,8 +5,8 @@ body {
 
 /* CountdownDisplay to show large font and red color */
 .countdown { 
-    font-size: 60px;
-    color:red;
+    font-size: 60px; /* Increase size to 60px */
+    color:red; /* change text color to red */
 }
 
 /* CountdownWarning used in v3 Assignment 5 */
