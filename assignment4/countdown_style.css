@@ -1,6 +1,7 @@
 /* Body Styling for Font Family */
 body { 
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    overflow: scroll;
 }
 
 /* CountdownDisplay to show large font and red color */
