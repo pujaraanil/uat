@@ -1,21 +1,24 @@
 <!-- Anil Pujara anipujar@uat.edu -->
-<!-- Assignement Week 4, #7-->
+<!-- Assignement Week 4, #8-->
 <!DOCTYPE html>
 <!-- ^ Declaration of Document Type -->
 <html lang="en">
 <head>
     <!-- Title Tag of Page -->
-    <title>UAT Space Program - Assignment #7 by Anil Pujara</title>
+    <title>UAT Space Program - Assignment #8 by Anil Pujara</title>
     <style>
+        /* Table Data Formatting to Grey Background */
         .tabledata {
             background-color:grey;
         }
+        /* Left column, font declaration, size, and background color of column */
         .datatype_col {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 12pt;
             background-color: rgb(211, 211, 211);
         }
 
+        /* Right column, font declaration, size, background color of column, and bolder text */
         .reading_col {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 12pt;
@@ -23,6 +26,7 @@
             font-weight: bolder;
         }
         
+        /* Separate CSS for header rows */
         .header_rows {
             background-color:black;
             color:white;
@@ -30,6 +34,7 @@
             font-size: 14pt;
         }
 
+        /* Separate CSS for title rows including padding on top and bottom */
         .title_row {
             background-color:white;
             color:red;
@@ -39,54 +44,56 @@
             padding-top: 10px; padding-bottom: 10px;
         }
 
+        /* Button Style for Bigger Font Size */
         .buttonstyle {
             font-size: 18pt;
         }
     </style>
-    
+
+    <!-- Add Audio Source and Label it audioMP3 -->
     <audio id="audioMP3" src="us-lab-background.mp3" loop="loop"></audio>
 
     <script>
+        // Start Button - Simply set attribute of button to be true for disabled and false for Stop button.
         function startButton() {
             document.getElementById("startbutton").disabled = true;
             document.getElementById("stopbutton").disabled = false;
-            //document.getElementById("audioMP3").muted = true;
-            document.getElementById("audioMP3").play();
+            document.getElementById("audioMP3").play(); 
+            // ^ Play background music when Start button pressed
         }
 
+        // Stop Button - Simply set attribute of button to be true for disabled and false for Start button.
         function stopButton() {
             document.getElementById("stopbutton").disabled = true;
             document.getElementById("startbutton").disabled = false;
-            document.getElementById("audioMP3").pause();
-        }
-        window.onload = function() {
-            /*let isOk = confirm("Background Music?");
-            if(isExecuted=true) { 
-                //document.getElementById("audioMP3").muted = true;
-                //document.getElementById("audioMP3").play();
-            }*/
+            document.getElementById("audioMP3").pause(); 
+            // ^ Pause background music when Stop button pressed
         }
     </script>
-
 </head>
 <body>
-    <!-- Display Logo Centered and Linked for Reload -->
+<!-- Display Logo Centered and Linked for Reload -->
 <center>
     <a href="https://anilpujara.com/uat/csc102/"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg" alt="UAT Space Logo"></a><br>
+    <!-- Table 80% the width with some padding between cells named datatable -->
     <table width="80%" class="tabledata" name="datatable" border="1" cellpadding="5">
+        <!-- Title Row -->
         <tr>
             <td colspan="2" class="title_row">
             <center><span style="font-size:20pt;">UAT SPACE PROGRAM</span></center>
             </td> 
         </tr>
+        <!-- Header Rows -->
         <tr>
-            <td width="50%" class="header_rows">
+            <td width="50%" class="header_rows"> <!-- Set 50% width for even table layout -->
                 <strong>Data Type</strong>
             </td>
-            <td width="50%"  class="header_rows">
+            <td width="50%"  class="header_rows"> <!-- Set 50% width for even table layout -->
                 <strong>Reading</strong>
             </td>
         </tr>
+        <!-- Header Rows End -->
+        <!-- Data Rows as provided -->
         <tr>
             <td class="datatype_col">Time elapsed:</td>
             <td class="reading_col">15 seconds</td>
@@ -171,10 +178,13 @@
             <td class="datatype_col">Gyro Z:</td>
             <td class="reading_col">-0.4</td>
         </tr>
+        <!-- End Data Rows -->
     </table>
-    <br>
-    <input type="button" class="buttonstyle" name="startbutton" id="startbutton" value="Start" onClick="startButton();"> 
-    <input type="button" class="buttonstyle" name="stopbutton"  id="stopbutton" value="Stop" onClick="stopButton();" disabled>
+    <br> <!-- Line Break extra space between table and buttons -->
+    <!-- Start & Stop Buttons -->
+    <input type="button" class="buttonstyle" id="startbutton" value="Start" onClick="startButton();"> 
+    <input type="button" class="buttonstyle" id="stopbutton" value="Stop" onClick="stopButton();" disabled>
+    <!-- ^ Stop button initially disabled by default --> 
     <br><br>
 </center>
 </body>

@@ -9,6 +9,7 @@
         body {
             font-size: 16pt;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
         }
         a.visited { 
             color: blue;
@@ -16,23 +17,98 @@
         a { 
             color: blue;
         }
+
+        .navigation a {
+            font-size: 12pt;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .navigation a:hover { 
+            background-color: blue;
+        }
     </style>
+    <script>
+        function showAssignments() {
+            var ass = document.getElementById("assignments");
+            if(ass.style.display === "none") {
+                ass.style.display = "block";
+            }
+            else { 
+                ass.style.display = "none";
+            }
+        }
+
+        function showObjectives() {
+            var objectivediv = document.getElementById("objectives");
+            if(objectivediv.style.display === "none") {
+                objectivediv.style.display = "block";
+            }
+            else { 
+                objectivediv.style.display = "none";
+            }
+        }
+
+    </script>
 </head>
 <body>
-    <center><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg"><br><a href="https://github.com/pujaraanil/uat/"><span style="font-size: 12pt;">GitHub Repository</span></a></center><br>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment1/">Assignment 1: Launching your UAT Space Program HTML Document Tags</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment2/">Assignment 2: Mission Control, We Have Blastoff!</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment3/">Assignment 3: The Building Blocks for your Space Base - Functions</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment4/">Assignment 4: Efficiency at Mission Control</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment5/">Assignment 5: Change Order Request from the Fleet Admiral</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment6/">Assignment 6: Mission Control Operator Login</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment7/">Assignment 7: Event Driven Programming - Buttons</a></p>
-        <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment8/">Assignment 8: UAT Space Program - We Have SOUND!</a></p>
-        <p align="center">Assignment 9: Javascript DOM and Document Structure with Tables, Themes, and Mock Data</p>
-        <p align="center">Assignment 10: A Web Presence</p>
-        
-        
+    <center><a href="#" onclick="location.reload();"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg"></a><br>
+        <!-- Navigation Begin -->
+        <div class="navigation">
+            <a href="#" onclick="showObjectives();">Board Objectives</a> • 
+            <a href="#" onclick="showAssignments();">Assignments</a> • 
+            <a href="https://github.com/pujaraanil/uat/" target="_blank"><span style="font-size: 12pt;">GitHub Repository</span></a> • 
+            <a href="https://teams.microsoft.com/l/chat/0/0?users=anipujar@uat.edu" target="_blank">Message Me on Teams</a>
+            <br><br>
+        </div>
     </center>
-
+        <!-- Objectives Div Layer - initially hidden until navigation click -->
+        <div id="objectives" align="left" style="display: none; padding-left: 10%; padding-right: 10%;">
+            <H2>TECHNOLOGY STUDIES</H2>
+            <p>
+                UAT’s Technology Studies program provides students an opportunity to explore and combine technologies in an
+                interdisciplinary way. Using the university core and general education as a foundation, students draw from the entire range of
+                technology areas taught at UAT to build a program of study that places technology in the context of entrepreneurship,
+                management and innovation. Students in this program will find new applications for technology as they combine areas such
+                as Cyber, Game Studies, Advancing Computer Science, Robotics and Business Technology in their Foundational, Skills
+                Development and Synthesis coursework. Many paths are possible through this degree resulting in graduates with a broad
+                perspective of how technologies can be combined. In turn, this degree is a foundatio batteries but onen for a wide variety of careers, including
+                entry into design and build roles, management, tech entrepreneur and startup ventures.
+            </p>
+            <H2>TECHNOLOGY STUDIES DEGREE OBJECTIVES</H2>
+            <p>
+                1. Demonstrate the ability to analyze and act on creative and entrepreneurial processes of technological innovation.<br><br>
+                2. Demonstrate the ability to forecast and act upon the potential impacts of nascent and emerging technologies in ways that
+                benefit organizations, governments and individuals.<br><br>
+                3. Meet four approved objectives from another UAT undergraduate degree program.
+            </p>    
+            <h2>TECHNOLOGY STUDIES DEGREE COURSES</h2>
+            <p>    
+                Students are given the opportunity to explore courses from various programs to view technology from different perspectives.
+                As an interdisciplinary program, it is recommended that students consult with Student Services to build a program of study
+                conducive to their technology interests.
+                Students within the Technology Studies major will complete a minimum of 6 credits of production studio coursework drawn
+                from areas of a different technology major.
+            </p>
+        </div>
+        
+        <!-- Assignments Div Layer - initially hidden until navigation click -->
+        <div id="assignments" align="center" style="display: block;">
+            <h2>Assignments from CSC102</h2>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment1/">Assignment 1: Launching your UAT Space Program HTML Document Tags</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment2/">Assignment 2: Mission Control, We Have Blastoff!</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment3/">Assignment 3: The Building Blocks for your Space Base - Functions</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment4/">Assignment 4: Efficiency at Mission Control</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment5/">Assignment 5: Change Order Request from the Fleet Admiral</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment6/">Assignment 6: Mission Control Operator Login</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment7/">Assignment 7: Event Driven Programming - Buttons</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment8/">Assignment 8: UAT Space Program - We Have SOUND!</a></p>
+            <p align="center"><a href="https://anilpujara.com/uat/csc102/assignment9/">Assignment 9: Javascript DOM and Document Structure with Tables, Themes, and Mock Data</a></p>
+            <p align="center"><a href="https://pujaraanil.github.io/uat/">Assignment 10: A Web Presence</a></p>
+        </div>
 </body>
 </html>
