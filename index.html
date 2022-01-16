@@ -9,7 +9,7 @@
         body {
             font-size: 16pt;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+            overflow: scroll;
         }
         a.visited { 
             color: blue;
@@ -34,23 +34,13 @@
     </style>
     <script>
         function showAssignments() {
-            var ass = document.getElementById("assignments");
-            if(ass.style.display === "none") {
-                ass.style.display = "block";
-            }
-            else { 
-                ass.style.display = "none";
-            }
+            document.getElementById("objectives").style.display = "none";
+            document.getElementById("assignments").style.display = "block";
         }
 
         function showObjectives() {
-            var objectivediv = document.getElementById("objectives");
-            if(objectivediv.style.display === "none") {
-                objectivediv.style.display = "block";
-            }
-            else { 
-                objectivediv.style.display = "none";
-            }
+            document.getElementById("assignments").style.display = "none";
+            document.getElementById("objectives").style.display = "block";
         }
 
     </script>
