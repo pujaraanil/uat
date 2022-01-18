@@ -1,8 +1,7 @@
 /* Body styles */
         body {
             background-image: linear-gradient(180deg, white, white, rgb(83, 85, 240));
-            overflow: scroll;
-            
+            overflow: scroll;            
         }
 
 /* Left column, font declaration, size, and background color of column */

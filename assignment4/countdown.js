@@ -1,3 +1,6 @@
+// Anil Pujara anipujar@uat.edu
+// Assignment Week 3, #4
+
 function Countdown() {
 
     // Variable Declarations for Countdown

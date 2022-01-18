@@ -1,3 +1,6 @@
+// Anil Pujara anipujar@uat.edu
+// Assignment Week 2, #3
+
 function play() {
     // Set color of Result style font color to red
     document.getElementById("Result").style.color = "red";
