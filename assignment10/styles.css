@@ -1,7 +1,7 @@
 /* Body styles */
         body {
             background: url(uat_space.png) no-repeat center fixed;
-            overflow: scroll;            
+            overflow-y: scroll;            
         }
 
 /* Left column, font declaration, size, and background color of column */
