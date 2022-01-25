@@ -1,0 +1,284 @@
+<!-- Anil Pujara anipujar@uat.edu -->
+<!-- Assignement Week 5, #9-->
+<!DOCTYPE html>
+<!-- ^ Declaration of Document Type -->
+<html lang="en">
+<head>
+    <!-- Title Tag of Page -->
+    <title>UAT Space Program - Assignment #9 by Anil Pujara</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- Add Audio Source and Label it audioMP3 -->
+    <audio id="audioMP3" src="us-lab-background.mp3" loop="loop"></audio>
+    <script src=dataLoader-1.js"></script>
+    <script>
+
+    /* NEW FUNCTION CREATED: 
+        Updates:
+        - One function for both start and stop button with action paramater 
+        - Declare start time and end times to calculate duration of how long in between start/stop clicks 
+        - Added functionality utilizing sessionStorage property 
+        - Update Time elapsed in table chart with actual script run time
+        */
+
+        function clickBtn(action) {
+                
+                var today = new Date();
+    
+                    if(action == 'start') // If start button is the action
+                    {
+                    // Disable the start button and enable the stop button
+                    document.getElementById("stopBtn").disabled = false; 
+                    document.getElementById("startBtn").disabled = true;  
+
+                    // Update Time elapsed in table chart to show timer has started and change background color to yellow
+                    document.getElementById("time_elapsed").innerHTML = "Timer started...";
+                    document.getElementById("time_elapsed").style.backgroundColor = 'yellow';
+                    
+                    // Play background music when Start button pressed
+                    document.getElementById("audioMP3").play(); 
+                    
+                    // Clear all table data values
+                    document.getElementById("latitude").innerHTML = "";
+                    document.getElementById("longitude").innerHTML = "";
+                    document.getElementById("gps").innerHTML = "";
+                    document.getElementById("bmp_altitude").innerHTML = "";
+                    document.getElementById("bmp_pressure").innerHTML = "";
+                    document.getElementById("bmp_temp").innerHTML = "";
+                    document.getElementById("digital_temp").innerHTML = "";
+                    document.getElementById("css_temp").innerHTML = "";
+                    document.getElementById("css_ec").innerHTML = "";
+                    document.getElementById("css_tvoc").innerHTML = "";
+                    document.getElementById("uv").innerHTML = "";
+                    document.getElementById("accelx").innerHTML = "";
+                    document.getElementById("accely").innerHTML = "";
+                    document.getElementById("accelz").innerHTML = "";
+                    document.getElementById("magx").innerHTML = "";
+                    document.getElementById("magy").innerHTML = "";
+                    document.getElementById("magz").innerHTML = "";
+                    document.getElementById("gyrox").innerHTML = "";
+                    document.getElementById("gyroy").innerHTML = "";
+                    document.getElementById("gyroz").innerHTML = "";
+
+
+    
+                    // Set clickTime to get starting time in milliseconds since 00:00:00 1/1/1970
+                    let clickTime = today.getTime();
+    
+                    // Set session variable of clickTime so value is accessible when stop button is clicked
+                    sessionStorage.setItem("clickTime", clickTime);
+    
+                               
+                    }
+    
+                    if(action == 'stop') // If stop button is the action
+                    {
+                    document.getElementById("audioMP3").pause(); 
+                    // ^ Pause background music when Stop button pressed
+                    
+                    // Set newTime to get stop button time in milliseconds
+                    let newTime = today.getTime();
+    
+                    // Calculate the differenceTime based on the newTime variable set and the session variable of start time
+                    // Divide by 1000 to get result in seconds and round to one decimal place using Math.round function
+                    var differenceTime = (newTime-sessionStorage.getItem("clickTime"))/1000;
+                    var differenceTime = Math.round(differenceTime*10)/10
+    
+                    // Disable stop button and enable start button
+                    document.getElementById("stopBtn").disabled = true; 
+                    document.getElementById("startBtn").disabled = false;
+                    
+                    // Custom alert message for user friendliness
+                    var alertmessage = "Script runtime: " + differenceTime + " seconds"; 
+                    
+                    // Update Time elapsed in table chart to the new time elapsed and background color to green
+                    document.getElementById("time_elapsed").innerHTML = differenceTime + " seconds";
+                    document.getElementById("time_elapsed").style.backgroundColor = "rgb(144,238,144,0.8)"; 
+                    
+                    // Alert message with amount of time in seconds elapsed between start and stop 
+                    //alert(alertmessage);
+
+
+                    // RANDOM NUMBER GENERATOR & DISPLAY IN TABLE DATA VALUES
+                    var latitude = Number.parseFloat(Math.random()*(-90-90+1)+90).toFixed(4);
+                    document.getElementById("latitude").innerHTML = latitude;
+
+                    var longitude = Number.parseFloat(Math.random()*(-180-180+1)+180).toFixed(4);
+                    document.getElementById("longitude").innerHTML = longitude;
+
+                    var gps = Math.floor(Math.random()*100);
+                    document.getElementById("gps").innerHTML = gps;
+
+                    var bmp_altitude = Number.parseFloat(Math.random()*(50000-10000+1)+10000).toFixed(2);
+                    document.getElementById("bmp_altitude").innerHTML = bmp_altitude;
+
+                    var bmp_pressure = Number.parseFloat(Math.random()*(10-0+1)+0).toFixed(2);
+                    document.getElementById("bmp_pressure").innerHTML = bmp_pressure;
+
+                    var bmp_temp = 0;
+                    document.getElementById("bmp_temp").innerHTML = bmp_temp;
+
+                    var digital_temp = Number.parseFloat(Math.random()*(30-20+1)+20).toFixed(2);
+                    document.getElementById("digital_temp").innerHTML = digital_temp;
+
+                    var css_temp = Number.parseFloat(Math.random()*(40-20+1)+20).toFixed(2);
+                    document.getElementById("css_temp").innerHTML = css_temp;
+
+                    var css_ec = Number.parseFloat(Math.random()*(1400-400+1)+400).toFixed(0);
+                    document.getElementById("css_ec").innerHTML = css_ec;
+
+                    var css_tvoc = Number.parseFloat(Math.random()*(20-0+1)+0).toFixed(0);
+                    document.getElementById("css_tvoc").innerHTML = css_tvoc;
+
+                    var uv = Number.parseFloat(Math.random()*(20-0+1)+0).toFixed(0);
+                    document.getElementById("uv").innerHTML = uv;
+
+                    var accelx = Number.parseFloat(Math.random()*(-3-1.5+1)+1.5).toFixed(2);
+                    document.getElementById("accelx").innerHTML = accelx;
+
+                    var accely = Number.parseFloat(Math.random()*(-3-1.5+1)+1.5).toFixed(2);
+                    document.getElementById("accely").innerHTML = accely;
+
+                    var accelz = Number.parseFloat(Math.random()*(-3-1.5+1)+1.5).toFixed(2);
+                    document.getElementById("accelz").innerHTML = accelz;
+
+                    var magx = Number.parseFloat(Math.random()*(0-1.5+1)+1.5).toFixed(2);
+                    document.getElementById("magx").innerHTML = magx;
+
+                    var magy = Number.parseFloat(Math.random()*(-1-1.5+1)+1.5).toFixed(2);
+                    document.getElementById("magy").innerHTML = magy;
+
+                    var magz = Number.parseFloat(Math.random()*(-2-1+1)+1).toFixed(2);
+                    document.getElementById("magz").innerHTML = magz;
+
+                    var gyrox = Number.parseFloat(Math.random()*(-3-5+1)+5).toFixed(2);
+                    document.getElementById("gyrox").innerHTML = gyrox;
+
+                    var gyroy = Number.parseFloat(Math.random()*(-1-1+1)+1).toFixed(2);
+                    document.getElementById("gyroy").innerHTML = gyroy;
+
+                    var gyroz = Number.parseFloat(Math.random()*(-2-1.5+1)+1.5).toFixed(2);
+                    document.getElementById("gyroz").innerHTML = gyroz;
+
+                    }
+            }
+
+    </script>
+</head>
+<body>
+<!-- Display Logo Centered and Linked for Reload -->
+<center>
+    <a href="../"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo.png" alt="UAT Space Logo"></a><br>
+    <!-- Table 80% the width with some padding between cells named datatable -->
+    <table width="70%" class="tabledata" name="datatable" border="1" cellpadding="5" style="background-color: rgb(126, 126, 126,0.8);">
+        <!-- Title Row -->
+        <tr>
+            <td colspan="2" class="title_row">
+            <center><span style="font-size:20pt;">UAT SPACE PROGRAM</span></center>
+            </td> 
+        </tr>
+        <!-- Header Rows -->
+        <tr>
+            <td width="50%" class="header_rows"> <!-- Set 50% width for even table layout -->
+                <strong>Data Type</strong>
+            </td>
+            <td width="50%"  class="header_rows"> <!-- Set 50% width for even table layout -->
+                <strong>Reading</strong>
+            </td>
+        </tr>
+        <!-- Header Rows End -->
+        <!-- Data Rows as provided -->
+        <tr>
+            <td class="datatype_col">Time elapsed:</td>
+            <td class="reading_col" id="time_elapsed">Click Start...</td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Latitude</td>
+            <td class="reading_col" id="latitude"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Longitutde:</td>
+            <td class="reading_col" id="longitude"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">GPS Altitude:</td>
+            <td class="reading_col" id="gps"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">BMP Sensor Altitude:</td>
+            <td class="reading_col" id="bmp_altitude"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">BMP Sensor Pressure:</td>
+            <td class="reading_col" id="bmp_pressure"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">BMP Sensor Temperature:</td>
+            <td class="reading_col" id="bmp_temp"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Digital Sensor Temperature:</td>
+            <td class="reading_col" id="digital_temp"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">CSS Sensor Temperature:</td>
+            <td class="reading_col" id="css_temp"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">CSS Sensor eC02:</td>
+            <td class="reading_col" id="css_ec"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">CSS Sensor TVOC:</td>
+            <td class="reading_col" id="css_tvoc"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">UV:</td>
+            <td class="reading_col" id="uv"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Accel X:</td>
+            <td class="reading_col" id="accelx"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Accel Y:</td>
+            <td class="reading_col" id="accely"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Accel Z:</td>
+            <td class="reading_col" id="accelz"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Magnetic X:</td>
+            <td class="reading_col" id="magx"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Magentic Y:</td>
+            <td class="reading_col" id="magy"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Magnetic Z:</td>
+            <td class="reading_col" id="magz"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Gyro X:</td>
+            <td class="reading_col" id="gyrox"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Gyro Y:</td>
+            <td class="reading_col" id="gyroy"></td>
+        </tr>
+        <tr>
+            <td class="datatype_col">Gyro Z:</td>
+            <td class="reading_col" id="gyroz"></td>
+        </tr>
+        <!-- End Data Rows -->
+    </table>
+    <br> <!-- Line Break extra space between table and buttons -->
+    <!-- Start & Stop Buttons -->
+    <input type="button" style="font-size: 18pt;" id="startBtn" value="Start" onClick="clickBtn('start');"> 
+    <input type="button" style="font-size: 18pt;" id="stopBtn" value="Stop" onClick="clickBtn('stop');" disabled>
+    <!-- ^ Stop button initially disabled by default --> 
+    <br><br>
+</center>
+</body>
+</html>

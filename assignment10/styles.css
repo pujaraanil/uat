@@ -1,0 +1,38 @@
+/* Body styles */
+        body {
+            background: url(uat_space.png) no-repeat center fixed;
+            overflow: scroll;            
+        }
+
+/* Left column, font declaration, size, and background color of column */
+        .datatype_col {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 14pt;
+            background-color: rgb(211, 211, 211,0.7);
+        }
+
+/* Right column, font declaration, size, background color of column, and bolder text */
+        .reading_col {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 14pt;
+            background-color: rgb(141, 175, 219,0.7);
+            font-weight: bolder;
+        }
+        
+/* Separate CSS for header rows */
+        .header_rows {
+            background-color:black;
+            color:white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16pt;
+        }
+
+/* Separate CSS for title rows including padding on top and bottom */
+        .title_row {
+            background-color:white;
+            color:blue;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 18pt;
+            font-weight: bolder;
+            padding-top: 10px; padding-bottom: 10px;
+        }
