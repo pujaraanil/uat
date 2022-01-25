@@ -82,10 +82,10 @@
 
                     // RANDOM NUMBER GENERATOR & DISPLAY IN TABLE DATA VALUES
                     var latitude = Number.parseFloat(Math.random()*(-90-90+1)+90).toFixed(4);
-                    document.getElementById("latitude").innerHTML = latitude;
+                    document.getElementById("latitude").innerHTML = latitude + "&#176;";
 
                     var longitude = Number.parseFloat(Math.random()*(-180-180+1)+180).toFixed(4);
-                    document.getElementById("longitude").innerHTML = longitude;
+                    document.getElementById("longitude").innerHTML = longitude + "&#176;";
 
                     var gps = Math.floor(Math.random()*100);
                     document.getElementById("gps").innerHTML = gps;
