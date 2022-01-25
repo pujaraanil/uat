@@ -13,15 +13,21 @@
         body {
             font-size: 16pt;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            overflow: scroll;
+            /* overflow: scroll; */
+            background: url(bg_cybersecurity2.jpg) no-repeat center fixed; 
         }
 
         /* Set links to always remain blue, even if visited */
-        a.visited { 
-            color: blue;
+        a:visited { 
+            color: rgb(53, 53, 121);
         }
         a { 
-            color: blue;
+            color: rgb(53, 53, 121);
+        }
+
+        a:hover {
+            color:rgb(0, 0, 0);
+            font-weight: bold;
         }
 
         /* Edit navigation links to look like buttons with padding and background colors */
@@ -33,11 +39,12 @@
             padding-right: 5px;
             padding-top: 5px;
             padding-bottom: 5px;
+            font-weight: bold;
         }
 
         /* Hover change color for navigation links */
         .navigation a:hover { 
-            background-color: blue;
+            background-color: rgb(53, 53, 121);
         }
     </style>
     <script>
@@ -56,7 +63,10 @@
 </head>
 <body>
     <!-- Begin Body -->
-    <center><a href="#" onclick="location.reload();"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg"></a>
+    <br><br>
+<table width="70%" align="center" border="0" style="background-color: rgb(255, 255, 255,.85);">
+    <tr><td>
+    <center><a href="#" onclick="location.reload();"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo.png"></a>
         <h1>ANIL PUJARA</h1>
         <!-- Navigation Begin -->
         <div class="navigation">
@@ -113,6 +123,9 @@
             <p align="center"><a href="assignment8/">Assignment 8: UAT Space Program - We Have SOUND!</a></p>
             <p align="center"><a href="assignment9/">Assignment 9: Javascript DOM and Document Structure with Tables, Themes, and Mock Data</a></p>
             <p align="center"><a href="https://pujaraanil.github.io/uat/">Assignment 10: A Web Presence</a></p>
-        </div>
+        </div>        
+    </td></tr>
+</table>
+<br><br>
 </body>
 </html>
