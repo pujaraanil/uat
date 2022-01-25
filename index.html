@@ -9,12 +9,20 @@
     <!-- Title -->
     <title>Anil Pujara | University of Advancing Technology</title>
     <script src="https://use.fontawesome.com/0cc8b54e61.js"></script>
+
+    <!-- UAT IN SPACE DEPENDENCIES -->
+    <link rel="stylesheet" href="assignment10/styles.css" type="text/css">
+    <!-- Add Audio Source and Label it audioMP3 -->
+    <audio id="audioMP3" src="assignment10/us-lab-background.mp3" loop="loop"></audio>
+    <script src="assignment10/space.js"></script>
+    <!-- END UAT IN SPACE DEPENDENCIES -->
+
     <style>
         /* Body Formatting */
         body {
             font-size: 16pt;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            /* overflow: scroll; */
+            overflow-y: scroll;
             background: url(bg_cybersecurity2.jpg) no-repeat center fixed; 
         }
 
@@ -34,7 +42,7 @@
         /* Edit navigation links to look like buttons with padding and background colors */
         .navigation a {
             font-size: 12pt;
-            background-color: rgb(0, 0, 0);
+            background-color: rgb(53, 53, 121);
             color: white;
             padding-left: 5px;
             padding-right: 5px;
@@ -45,7 +53,7 @@
 
         /* Hover change color for navigation links */
         .navigation a:hover { 
-            background-color: rgb(53, 53, 121);
+            background-color: rgb(0, 0, 0);
         }
     </style>
     <script>
@@ -53,13 +61,25 @@
         function showAssignments() {
             document.getElementById("objectives").style.display = "none";
             document.getElementById("assignments").style.display = "block";
+            document.getElementById("space").style.display = "none";
+            
         }
 
         // Objectives div layer show and hide others based on click
         function showObjectives() {
             document.getElementById("assignments").style.display = "none";
             document.getElementById("objectives").style.display = "block";
+            document.getElementById("space").style.display = "none";
+            
         }
+
+        function showSpace() {
+            document.getElementById("assignments").style.display = "none";
+            document.getElementById("objectives").style.display = "none";
+            document.getElementById("space").style.display = "block";
+            
+        }
+
     </script>
 </head>
 <body>
@@ -72,7 +92,7 @@
         <!-- Navigation Begin -->
         <div class="navigation">
             <a href="#" onclick="showObjectives();">Board Objectives</a> •  
-            <a href="assignment10/">UAT in Space</a> • 
+            <a href="#" onclick="showSpace();">UAT In Space</a> • 
             <a href="#" onclick="showAssignments();">Assignments<i class="fa-solid fa-diagram-lean-canvas"></i></a> • 
             <a href="https://github.com/pujaraanil/uat/" target="_blank"><span style="font-size: 12pt;">GitHub<i class="fa fa-brands fa-github-square" style="padding-left: 4px;"></i></span></a> • 
             <a href="https://teams.microsoft.com/l/chat/0/0?users=anipujar@uat.edu" target="_blank">Message Me<i class="fa fa-windows" aria-hidden="true" style="padding-left: 3px;"></i></a>
@@ -94,23 +114,63 @@
                 perspective of how technologies can be combined. In turn, this degree is a foundatio batteries but onen for a wide variety of careers, including
                 entry into design and build roles, management, tech entrepreneur and startup ventures.
             </p>
-            <H3>TECHNOLOGY STUDIES DEGREE OBJECTIVES</H3>
+            <H4>TECHNOLOGY STUDIES DEGREE OBJECTIVES</H4>
             <p>
                 1. Demonstrate the ability to analyze and act on creative and entrepreneurial processes of technological innovation.<br><br>
                 2. Demonstrate the ability to forecast and act upon the potential impacts of nascent and emerging technologies in ways that
                 benefit organizations, governments and individuals.<br><br>
                 3. Meet four approved objectives from another UAT undergraduate degree program.
             </p>    
-            <h3>TECHNOLOGY STUDIES DEGREE COURSES</h3>
+        <hr align="center">
+        <h3>NETWORK SECURITY</h3>
+            <p>
+                A network security specialist is a professional who focuses on ensuring information confidentiality, integrity and availability.
+                Network security utilizes proactive techniques, including defense-in-depth and layered security, to mitigate or eliminate
+                vulnerabilities in information systems and to protect against potential exploitation. This may include network and application
+                penetration testing, software and hardware reverse engineering as well as developing exploits for identified vulnerabilities.
+                Security professionals possess intimate knowledge of critical business components. The Network Security degree reflects the
+                application of theory and is aligned with industry standards and guidelines. It provides students with the opportunity to
+                synthesize and apply the vital skills and knowledge necessary to succeed in the cyber security workforce.
+            </p>
+            <h4>NETWORK SECURITY DEGREE OBJECTIVES</h4>
+            <p>
+                1. Create a network infrastructure design communications document that includes identified hardware components,
+                connections to outside world, identified physical layer connectivity (media) and addressing, including operational and
+                security components in the design.
+            </p>
+            <p>
+                2. Install, configure and test security hardware and software tools with supporting documentation such as port scanners,
+                vulnerability detection systems, intrusion detection systems, firewalls, system hardening, anti-virus tools, patch
+                management, auditing and assessment.
+            </p>
             <p>    
-                Students are given the opportunity to explore courses from various programs to view technology from different perspectives.
-                As an interdisciplinary program, it is recommended that students consult with Student Services to build a program of study
-                conducive to their technology interests.
-                Students within the Technology Studies major will complete a minimum of 6 credits of production studio coursework drawn
-                from areas of a different technology major.
+                3. Construct, implement and document a script or a program to automate a security-related process or other tasks such as
+                installation, administration, management, mapping resources, logon scripts, patch management, updates, auditing,
+                analysis and assessment.
+            </p>
+            <p>    
+                4. Create a policy or procedure that addresses events such as: a disaster recovery plan, a business continuity plan, an
+                incident response policy, an acceptable usage document, an information security policy, a physical security policy,
+                assessments or troubleshooting procedures.
+            </p>    
+                5. Develop a research report or implementation plan concerning legal and ethical best practices and mandated requirements
+                that pertain to information security.
+            <p>   
+                6. Research, document, test and evaluate several current industry information security based threats, risks, malicious
+                activities, covert methodology, encryption technologies, mitigation techniques or unconventional tactics to prevent loss of
+                sensitive information and data confidentiality, integrity and availability.
+            </p>
+                
+            <h4>NSA CYBER DEFENSE PROGRAM OF STUDY</h4>
+            <p>
+                The University of Advancing Technology is a designated Center of Academic Excellence - Cyber Defense (CAE-CD) institution 
+                through the National Centers of Academic Excellence in Cybersecurity (NCAE-C). Sponsored by the National Security Agency
+                (NSA), NCAE-C operates under national authority as the national manager for cyber defense education and training relating to
+                national security systems. Its programs assure the very finest preparation of professionals entrusted with securing our critical
+                information.
             </p>
         </div>
-        
+
         <!-- Assignments Div Layer - initially hidden until navigation click -->
         <div id="assignments" align="center" style="display: none;">
             <h2>Assignments from CSC102</h2>
@@ -126,7 +186,124 @@
             <p align="center"><a href="assignment9/">Assignment 9: Javascript DOM and Document Structure with Tables, Themes, and Mock Data</a></p>
             <p align="center"><a href="assignment10/">Assignment 10: UAT Space Page Launch!</a></p>
             <p align="center"><a href="https://pujaraanil.github.io/uat/">Final Project: A Web Presence</a></p>
-        </div>        
+        </div>
+        
+        <!-- UAT IN SPACE Table - initially hidden until navigation click -->
+        <div id="space" align="center" style="display: none;">
+            <!-- Table 80% the width with some padding between cells named datatable -->
+            <table width="80%" class="tabledata" name="datatable" border="1" cellpadding="5" style="background-color: rgb(126, 126, 126,0.8);">
+                <!-- Title Row -->
+                <tr>
+                    <td colspan="2" class="title_row">
+                    <center><span style="font-size:20pt;">UAT SPACE PROGRAM LIVE DEMO</span><br>
+                        <!-- Start & Stop Buttons -->
+                        <input type="button" style="font-size: 18pt;" id="startBtn" value="Start" onClick="clickBtn('start');"> 
+                        <input type="button" style="font-size: 18pt;" id="stopBtn" value="Stop" onClick="clickBtn('stop');" disabled>
+                        <!-- ^ Stop button initially disabled by default -->
+                    </center>
+                    </td> 
+                </tr>
+                <!-- Header Rows -->
+                <tr>
+                    <td width="50%" class="header_rows"> <!-- Set 50% width for even table layout -->
+                        <strong>Data Type</strong>
+                    </td>
+                    <td width="50%"  class="header_rows"> <!-- Set 50% width for even table layout -->
+                        <strong>Reading</strong>
+                    </td>
+                </tr>
+                <!-- Header Rows End -->
+                <!-- Data Rows as provided -->
+                <tr>
+                    <td class="datatype_col">Time elapsed:</td>
+                    <td class="reading_col" id="time_elapsed">Click Start...</td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Latitude</td>
+                    <td class="reading_col" id="latitude"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Longitutde:</td>
+                    <td class="reading_col" id="longitude"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">GPS Altitude:</td>
+                    <td class="reading_col" id="gps"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">BMP Sensor Altitude:</td>
+                    <td class="reading_col" id="bmp_altitude"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">BMP Sensor Pressure:</td>
+                    <td class="reading_col" id="bmp_pressure"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">BMP Sensor Temperature:</td>
+                    <td class="reading_col" id="bmp_temp"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Digital Sensor Temperature:</td>
+                    <td class="reading_col" id="digital_temp"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">CSS Sensor Temperature:</td>
+                    <td class="reading_col" id="css_temp"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">CSS Sensor eC02:</td>
+                    <td class="reading_col" id="css_ec"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">CSS Sensor TVOC:</td>
+                    <td class="reading_col" id="css_tvoc"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">UV:</td>
+                    <td class="reading_col" id="uv"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Accel X:</td>
+                    <td class="reading_col" id="accelx"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Accel Y:</td>
+                    <td class="reading_col" id="accely"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Accel Z:</td>
+                    <td class="reading_col" id="accelz"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Magnetic X:</td>
+                    <td class="reading_col" id="magx"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Magentic Y:</td>
+                    <td class="reading_col" id="magy"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Magnetic Z:</td>
+                    <td class="reading_col" id="magz"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Gyro X:</td>
+                    <td class="reading_col" id="gyrox"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Gyro Y:</td>
+                    <td class="reading_col" id="gyroy"></td>
+                </tr>
+                <tr>
+                    <td class="datatype_col">Gyro Z:</td>
+                    <td class="reading_col" id="gyroz"></td>
+                </tr>
+                <!-- End Data Rows -->
+            </table>
+            <br><br>
+        </div>
+
+
     </td></tr>
 </table>
 <br><br>

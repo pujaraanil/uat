@@ -30,7 +30,7 @@
 /* Separate CSS for title rows including padding on top and bottom */
         .title_row {
             background-color:white;
-            color:blue;
+            color:rgba(10, 44, 88);
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 18pt;
             font-weight: bolder;
