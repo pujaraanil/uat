@@ -36,7 +36,7 @@
 
         a:hover {
             color:rgb(0, 0, 0);
-            font-weight: bold;
+            
         }
 
         /* Edit navigation links to look like buttons with padding and background colors */
@@ -51,7 +51,6 @@
             font-weight: bold;
             border-style:dotted;
             border-color: rgb(53, 53, 121);
-            
         }
 
         /* Hover change color for navigation links */
@@ -90,8 +89,8 @@
     <br><br>
 <table align="center" width="80%" border="0" style="background-color: rgb(255, 255, 255,.80);">
     <tr><td>
-    <center><a href="#" onclick="location.reload();"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo.png"></a>
-        <h1>ANIL PUJARA</h1>
+    <center><a href="#" onclick="location.reload();"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo.png"></a><br><br>
+        <!-- <h1>ANIL PUJARA</h1> -->
         <!-- Navigation Begin -->
         <div class="navigation">
             <a href="#" onclick="showObjectives();">Board Objectives</a>&nbsp;
@@ -105,6 +104,7 @@
     </center>
         <!-- Objectives Div Layer - initially shown until navigation click -->
         <div id="objectives" align="left" style="display: block; padding-left: 10%; padding-right: 10%;">
+            <center><h1>ANIL PUJARA</h1></center>
             <h2>BOARD OBJECTIVES</h2>
             <H3>TECHNOLOGY STUDIES</H3>
             <p>
@@ -175,20 +175,21 @@
         </div>
 
         <!-- Assignments Div Layer - initially hidden until navigation click -->
-        <div id="assignments" align="center" style="display: none;">
+        <div id="assignments" align="center" style="display: none; padding-left: 5%; padding-right: 5%;">
             <h2>Assignments from CSC102</h2>
             <h3>INTRO TO PROGRAMMING</h3>
-            <p align="center"><a href="assignment1/">Assignment 1: Launching your UAT Space Program HTML Document Tags</a></p>
-            <p align="center"><a href="assignment2/">Assignment 2: Mission Control, We Have Blastoff!</a></p>
-            <p align="center"><a href="assignment3/">Assignment 3: The Building Blocks for your Space Base - Functions</a></p>
-            <p align="center"><a href="assignment4/">Assignment 4: Efficiency at Mission Control</a></p>
-            <p align="center"><a href="assignment5/">Assignment 5: Change Order Request from the Fleet Admiral</a></p>
-            <p align="center"><a href="assignment6/">Assignment 6: Mission Control Operator Login</a></p>
-            <p align="center"><a href="assignment7/">Assignment 7: Event Driven Programming - Buttons</a></p>
-            <p align="center"><a href="assignment8/">Assignment 8: UAT Space Program - We Have SOUND!</a></p>
-            <p align="center"><a href="assignment9/">Assignment 9: Javascript DOM and Document Structure with Tables, Themes, and Mock Data</a></p>
-            <p align="center"><a href="assignment10/">Assignment 10: UAT Space Page Launch!</a></p>
-            <p align="center"><a href="https://pujaraanil.github.io/uat/">Final Project: A Web Presence</a></p>
+            <h4>By Anil Pujara</h4>
+            <p align="center"><a href="assignment1/">#1: Launching your UAT Space Program HTML Document Tags</a></p>
+            <p align="center"><a href="assignment2/">#2: Mission Control, We Have Blastoff!</a></p>
+            <p align="center"><a href="assignment3/">#3: The Building Blocks for your Space Base - Functions</a></p>
+            <p align="center"><a href="assignment4/">#4: Efficiency at Mission Control</a></p>
+            <p align="center"><a href="assignment5/">#5: Change Order Request from the Fleet Admiral</a></p>
+            <p align="center"><a href="assignment6/">#6: Mission Control Operator Login</a></p>
+            <p align="center"><a href="assignment7/">#7: Event Driven Programming - Buttons</a></p>
+            <p align="center"><a href="assignment8/">#8: UAT Space Program - We Have SOUND!</a></p>
+            <p align="center"><a href="assignment9/">#9: Javascript DOM and Document Structure with Tables, Themes, and Mock Data</a></p>
+            <p align="center"><a href="assignment10/">#10: UAT Space Page Launch!</a></p>
+            <p align="center"><a href="https://pujaraanil.github.io/uat/">Final Project: A Web Presence</a></p><br>
         </div>
         
         <!-- UAT IN SPACE Table - initially hidden until navigation click -->
@@ -199,7 +200,7 @@
                 <!-- Title Row -->
                 <tr>
                     <td colspan="2" class="title_row">
-                    <center><span style="font-size:20pt;">UAT SPACE PROGRAM LIVE DEMO</span><br>
+                    <center><span style="font-size:20pt;">UAT SPACE PROGRAM LIVE DEMO</span><br>by Anil Pujara<br><br>
                         <!-- Start & Stop Buttons -->
                         <input type="button" style="font-size: 18pt;" id="startBtn" value="Start" onClick="clickBtn('start');"> 
                         <input type="button" style="font-size: 18pt;" id="stopBtn" value="Stop" onClick="clickBtn('stop');" disabled>
