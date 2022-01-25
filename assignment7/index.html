@@ -10,6 +10,8 @@
         /* Always show scroll bar */
         body {
             overflow: scroll;
+            background: url(uat_background.jpg) no-repeat center fixed;
+            background-size: cover;
         }
         /* Table Data Formatting to Grey Background */
         .tabledata {
@@ -50,37 +52,66 @@
 
         /* Button Style for Bigger Font Size */
         .buttonstyle {
-            font-size: 18pt;
+            font-size: 36pt;
         }
     </style>
-    <script>
 
-        // New Function 
+    <script>
+        /* NEW FUNCTION CREATED: 
+        Updates:
+        - One function for both start and stop button with action paramater 
+        - Declare start time and end times to calculate duration of how long in between start/stop clicks 
+        - Added functionality utilizing sessionStorage property */
+
         function clickBtn(action) {
                 
             var today = new Date();
-            var clickTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            var newTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            let differenceTime = newTime-clickTime;
-
-                if(action == 'start')
+                if(action == 'start') // If start button is the action
                 {
+
+                // Update Time elapsed in table chart to show timer has started and change background color to yellow
+                document.getElementById("time_elapsed").innerHTML = "Timer started...";
+                document.getElementById("time_elapsed").style.backgroundColor = 'yellow';
+
+                // Set clickTime to get starting time in milliseconds since 00:00:00 1/1/1970
+                let clickTime = today.getTime();
+
+                // Set session variable of clickTime so it's accessible when stop button is clicked
+                sessionStorage.setItem("clickTime", clickTime);
+
+                // Disable the start button and enable the stop button
                 document.getElementById("stopBtn").disabled = false; 
-                document.getElementById("startBtn").disabled = true;   
-                alert(clickTime);
-                                 
+                document.getElementById("startBtn").disabled = true;                                 
                 }
 
-                if(action == 'stop')
+                if(action == 'stop') // If stop button is the action
                 {
+                // Set newTime to get stop button time in milliseconds
+                let newTime = today.getTime();
+
+                // Calculate the differenceTime based on the newTime variable set and the session variable of start time
+                // Divide by 1000 to get result in seconds and round to one decimal place using Math.round function
+                var differenceTime = (newTime-sessionStorage.getItem("clickTime"))/1000;
+                var differenceTime = Math.round(differenceTime*10)/10
+
+                // Disable stop button and enable start button
                 document.getElementById("stopBtn").disabled = true; 
-                document.getElementById("startBtn").disabled = false;                    
-                alert(differenceTime);
+                document.getElementById("startBtn").disabled = false;
+                
+                // Custom alert message for user friendliness
+                var alertmessage = "Script runtime: " + differenceTime + " seconds"; 
+                
+                // Update Time elapsed in table chart to the new time elapsed and background color to green
+                document.getElementById("time_elapsed").innerHTML = differenceTime + " seconds";
+                document.getElementById("time_elapsed").style.backgroundColor = "green"; 
+                
+                // Alert message with amount of time in seconds elapsed between start and stop 
+                alert(alertmessage);
                 }
         }
 
-
-        // Start Button - Simply set attribute of button to be true for disabled and false for Stop button.
+        /* ORIGINAL FUNCTION SUBMITTED BUT REVISED TO ABOVE FUNCTION FOR CALCULATING DURATION
+        Start Button - Simply set attribute of button to be true for disabled and false for Stop button.
         function startButton() {
             document.getElementById("startbutton").disabled = true;
             document.getElementById("stopbutton").disabled = false;
@@ -91,12 +122,15 @@
             document.getElementById("stopbutton").disabled = true;
             document.getElementById("startbutton").disabled = false;
         }
+        */
+
     </script>
+
 </head>
 <body>
 <!-- Display Logo Centered and Linked for Reload -->
 <center>
-    <a href="../"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo-2.jpg" alt="UAT Space Logo"></a><br>
+    <a href="../"><img src="https://anilpujara.com/uat/csc102/UATspaceLogo.png" alt="UAT Space Logo"></a><br>
     <!-- Table 80% the width with some padding between cells named datatable -->
     <table width="80%" class="tabledata" name="datatable" border="1" cellpadding="5">
         <!-- Title Row -->
@@ -118,7 +152,8 @@
         <!-- Data Rows as provided -->
         <tr>
             <td class="datatype_col">Time elapsed:</td>
-            <td class="reading_col">15 seconds</td>
+            <td class="reading_col" id="time_elapsed">Click Start...</td>
+            <!-- ID of time_elapsed so it can be updated with JS script with actual time elapsed between start/stop -->
         </tr>
         <tr>
             <td class="datatype_col">Latitude</td>
@@ -203,15 +238,14 @@
         <!-- End Data Rows -->
     </table>
     <br> <!-- Line Break extra space between table and buttons -->
-    <!-- Start & Stop Buttons -->
+    
+    <!-- Start & Stop Buttons OLD BUTTONS USING 2 DIFFERENT FUNCTIONS
     <input type="button" class="buttonstyle" id="startbutton" value="Start" onClick="startButton();"> 
-    <input type="button" class="buttonstyle" id="stopbutton" value="Stop" onClick="stopButton();" disabled>
+    <input type="button" class="buttonstyle" id="stopbutton" value="Stop" onClick="stopButton();" disabled>-->
 
-    <!-- Second Button with One JavaScript Function for Time (To be completed)
+    <!-- IMPROVED BUTTONS with One JavaScript Function using Paramaters and Calculating Time Elapsed -->
     <input type="button" class="buttonstyle" id="startBtn" value="Start" onClick="clickBtn('start');"> 
     <input type="button" class="buttonstyle" id="stopBtn" value="Stop" onClick="clickBtn('stop');" disabled>
-    -->
-
     <!-- ^ Stop button initially disabled by default --> 
     <br><br>
 </center>
