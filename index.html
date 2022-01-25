@@ -44,16 +44,21 @@
             font-size: 12pt;
             background-color: rgb(53, 53, 121);
             color: white;
-            padding-left: 5px;
-            padding-right: 5px;
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px;
             font-weight: bold;
+            
         }
 
         /* Hover change color for navigation links */
         .navigation a:hover { 
             background-color: rgb(0, 0, 0);
+        }
+
+        h1 {
+            line-height: 5pt;
         }
     </style>
     <script>
@@ -91,10 +96,10 @@
         <h1>ANIL PUJARA</h1>
         <!-- Navigation Begin -->
         <div class="navigation">
-            <a href="#" onclick="showObjectives();">Board Objectives</a> •  
-            <a href="#" onclick="showSpace();">UAT In Space</a> • 
-            <a href="#" onclick="showAssignments();">Assignments<i class="fa-solid fa-diagram-lean-canvas"></i></a> • 
-            <a href="https://github.com/pujaraanil/uat/" target="_blank"><span style="font-size: 12pt;">GitHub<i class="fa fa-brands fa-github-square" style="padding-left: 4px;"></i></span></a> • 
+            <a href="#" onclick="showObjectives();">Board Objectives</a>  
+            <a href="#" onclick="showSpace();">UAT In Space</a> 
+            <a href="#" onclick="showAssignments();">Assignments<i class="fa-solid fa-diagram-lean-canvas"></i></a> 
+            <a href="https://github.com/pujaraanil/uat/" target="_blank"><span style="font-size: 12pt;">GitHub<i class="fa fa-brands fa-github-square" style="padding-left: 4px;"></i></span></a> 
             <a href="https://teams.microsoft.com/l/chat/0/0?users=anipujar@uat.edu" target="_blank">Message Me<i class="fa fa-windows" aria-hidden="true" style="padding-left: 3px;"></i></a>
             <br><br>
         </div>
@@ -190,6 +195,7 @@
         
         <!-- UAT IN SPACE Table - initially hidden until navigation click -->
         <div id="space" align="center" style="display: none;">
+            <br>
             <!-- Table 80% the width with some padding between cells named datatable -->
             <table width="80%" class="tabledata" name="datatable" border="1" cellpadding="5" style="background-color: rgb(126, 126, 126,0.8);">
                 <!-- Title Row -->
